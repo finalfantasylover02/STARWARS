@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import getState from "./flux.js";
 
 // Initialize the context with null values
-export const Context = React.createContext(null);
+export const Context = React.createContext();
 
-// Function to inject the context into components
+
 const injectContext = PassedComponent => {
     const StoreWrapper = props => {
         // State to manage the context
         const [state, setState] = useState({
-            store: null,
-            actions: null
+            store: {}, // Initialize store to an empty object
+            actions: {} // Initialize actions to an empty object
         });
 
         // Initialize the state using getState function

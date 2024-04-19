@@ -1,16 +1,19 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import injectContext from './store/appContext';
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
-import { PlanetDetail } from "./views/PlanetDetail.js";
-import { VehicleDetail } from "./views/VehicleDetail.js";
-import { PeopleDetail } from "./views/PeopleDetail.js";
-import injectContext from "./store/AppContext.js";
+import  PlanetDetail  from "./views/PlanetDetail";
+import  VehicleDetail  from "./views/VehicleDetail";
+import  PeopleDetail  from "./views/PeopleDetail";
+import  PlanetList  from "./component/planetList";
+import  VehicleList  from "./component/vehicleList";
+import  PeopleList  from "./component/peopleList";
 
-import { Navbar } from "./component/navbar.js";
+import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
 // Create your Layout component
@@ -28,6 +31,9 @@ const Layout = () => {
                         {/* Define routes for different views */}
                         <Route path="/" element={<Home />} />
                         <Route path="/demo" element={<Demo />} />
+                        <Route path="/planets" element={<PlanetList />} />
+                        <Route path="/vehicles" element={<VehicleList />} /> 
+                        <Route path="/people" element={<PeopleList />} />
                         <Route path="/planets/:id" element={<PlanetDetail />} />
                         <Route path="/vehicles/:id" element={<VehicleDetail />} />
                         <Route path="/people/:id" element={<PeopleDetail />} />

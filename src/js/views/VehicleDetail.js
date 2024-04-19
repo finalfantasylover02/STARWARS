@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Context } from '../store/AppContext';
+import { Context } from '../store/appContext';
 
 const VehicleDetail = ({ match }) => {
   const { actions } = useContext(Context);
