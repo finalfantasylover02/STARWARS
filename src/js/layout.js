@@ -4,8 +4,6 @@ import injectContext from './store/appContext';
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
 import  PlanetDetail  from "./views/PlanetDetail";
 import  VehicleDetail  from "./views/VehicleDetail";
 import  PeopleDetail  from "./views/PeopleDetail";
@@ -30,14 +28,12 @@ const Layout = () => {
                     <Routes>
                         {/* Define routes for different views */}
                         <Route path="/" element={<Home />} />
-                        <Route path="/demo" element={<Demo />} />
                         <Route path="/planets" element={<PlanetList />} />
                         <Route path="/vehicles" element={<VehicleList />} /> 
                         <Route path="/people" element={<PeopleList />} />
                         <Route path="/planets/:id" element={<PlanetDetail />} />
                         <Route path="/vehicles/:id" element={<VehicleDetail />} />
                         <Route path="/people/:id" element={<PeopleDetail />} />
-                        <Route path="/single/:theid" element={<Single />} />
                         <Route path="*" element={<h1>Not found!</h1>} />
                     </Routes>
                     {/* Include the Footer component */}
